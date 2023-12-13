@@ -9,7 +9,6 @@ const Products = async ({ params }) => {
 
     return <div
         className="bg-black flex-1 flex justify-center items-center"
-
     >
         <div className="max-w-8xl w-10/12 my-8 ">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -20,6 +19,8 @@ const Products = async ({ params }) => {
                     <p>{product.description}</p>
                     <p>{product.price}</p>
                     <p>{product.brand}</p>
+                    {/* <img src={product.image_url || 'https://unsplash.com/photos/WLUHO9A_xik/download?force=true&w=640'} alt={product.title || 'Ürün Resmi'} /> */}
+
                 </div>
             </div>
         </div>

@@ -3,19 +3,20 @@ import React, { useState } from 'react';
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import Link from 'next/link';
-import { useStore } from '@/stores';
+//import { useStore } from '@/stores';
 
 const ecommerce_url = process.env.ECOMMERCE_URL;
 
 const MyAccount = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { updateUser } = useStore.getState();
+  // const { updateUser } = useStore.getState();
   const router = useRouter()
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
       const response = await fetch(`${ecommerce_url}auth/login`, {
         method: "POST",
         headers: {
@@ -25,7 +26,7 @@ const MyAccount = () => {
       });
       if (response.ok) {
         const data = await response.json();
-        updateUser(data);
+       // updateUser(data);
         toast.success(
           <p className="flex">
             Hello {data.firstName} {data.lastName}
@@ -42,7 +43,10 @@ const MyAccount = () => {
           autoClose: 3000,
         });
       }
-  
+    } catch (error) {
+      console.error("Hata:", error);
+    }
+
   };
 
   return (

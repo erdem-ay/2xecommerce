@@ -2,6 +2,7 @@ import { useStore } from '@/stores';
 import Link from 'next/link';
 import React from 'react'
 
+
 const Home = async () => {
   const { getProducts } = useStore.getState();
   const products = await getProducts();
@@ -22,6 +23,7 @@ const Home = async () => {
               <p>{product.description}</p>
               <p>{product.price}</p>
               <p>{product.brand}</p>
+              {/* <img src={product.image_url || ecommerce} alt={product.title || 'Ürün Resmi'} /> */}
             </Link>
           ))}
         </div>

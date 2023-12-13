@@ -1,6 +1,12 @@
+"use client"
+import { useStore } from '@/stores';
 import Link from 'next/link';
 
+
 const Navbar = () => {
+  const { user } = useStore();  //
+  console.log("user", user)  //
+
   return (
     <nav className="bg-blue-500 p-6">
       <div className="container mx-auto flex justify-between items-center">
