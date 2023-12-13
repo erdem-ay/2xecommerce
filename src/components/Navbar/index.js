@@ -4,8 +4,9 @@ import Link from 'next/link';
 
 
 const Navbar = () => {
-  const { user } = useStore();  //
-  console.log("user", user)  //
+  const { getUser } = useStore();
+  const user = getUser();
+  console.log("userR", user.firstName)
 
   return (
     <nav className="bg-blue-500 p-6">
@@ -25,9 +26,16 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/my-account">
-              <p className="text-white">My Account</p>
-            </Link>
+            {user?.id ? (
+              <div>
+                <p>
+                  {user.firstName} 
+                  {user.lastName}
+                </p>
+              </div>) : (<Link href="/my-account">
+                <p className="text-white">My Account</p>
+              </Link>)}
+
           </li>
         </ul>
       </div>

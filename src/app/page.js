@@ -6,7 +6,6 @@ import React from 'react'
 const Home = async () => {
   const { getProducts } = useStore.getState();
   const products = await getProducts();
-  console.log(products)
 
   return (
     <div

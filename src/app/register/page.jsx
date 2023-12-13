@@ -81,12 +81,6 @@ const Register = () => {
                 autoClose: 3000,
             });
         }
-
-        console.log('First Name:', firstName);
-        console.log('Last Name:', lastName);
-        console.log('Email:', email);
-        console.log('Password:', password);
-        console.log('Current Password:', confirmPassword);
     };
 
     return (

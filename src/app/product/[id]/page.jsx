@@ -2,7 +2,6 @@ import { useStore } from "@/stores";
 import React from "react";
 
 const Products = async ({ params }) => {
-    console.log(params.id)
     const { getProductById } = useStore.getState();
     const product = await getProductById(params.id);
     console.log(product)
